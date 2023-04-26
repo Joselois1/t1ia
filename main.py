@@ -72,9 +72,9 @@ def busqueda_profundidad_recursiva(lista_ady, nodo_inicial, visited = None):
 #                nodo_inicial = padre[nodo_inicial]                
 #            print(nodo_inicial)
 
-def busqueda_costo_uniforme(graph, start, goal):
+def busqueda_costo_uniforme(graph, nodo_inicial, nodo_objetivo):
     visited = set()
-    queue = [(0, start, [])]
+    queue = [(0, nodo_inicial, [])]
     
     while queue:
         (cost, node, path) = heapq.heappop(queue)
@@ -83,7 +83,7 @@ def busqueda_costo_uniforme(graph, start, goal):
             visited.add(node)
             path = path + [node]
             
-            if node == goal:
+            if node == nodo_objetivo:
                 return path
             
             for (neighbor, weight) in graph[node]:
@@ -93,9 +93,9 @@ def busqueda_costo_uniforme(graph, start, goal):
     return None
 
 
-def busqueda_greedy(graph, start, goal):
+def busqueda_greedy(graph, nodo_inicial, nodo_objetivo):
     visited = set()
-    queue = [(heuristica[start], start, [])] # Use heuristic value as priority
+    queue = [(heuristica[nodo_inicial], nodo_inicial, [])] # Usa heuristica como prioridad
     
     while queue:
         (_, node, path) = heapq.heappop(queue)
@@ -104,7 +104,7 @@ def busqueda_greedy(graph, start, goal):
             visited.add(node)
             path = path + [node]
             
-            if node == goal:
+            if node == nodo_objetivo:
                 return path
             
             for (neighbor, weight) in graph[node]:
