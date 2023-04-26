@@ -1,6 +1,5 @@
-
-Init: <nodo_inicial>
-Goal: <nodo_objetivo>
+Init: <A>
+Goal: <H>
 <A> <10>
 <B> <7>
 <C> <10>
@@ -9,7 +8,6 @@ Goal: <nodo_objetivo>
 <F> <2>
 <G> <2>
 <H> <0>
-
 <A>, <B>, <11>
 <A>, <C>, <6>
 <B>, <D>, <4>
@@ -20,3 +18,4 @@ Goal: <nodo_objetivo>
 <E>, <H>, <5>
 <F>, <G>, <1>
 <G>, <E>, <4>
+ 
